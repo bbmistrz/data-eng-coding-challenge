@@ -1,4 +1,4 @@
-# Syft Data Engineer Coding Challenge
+# Indeed Flex Data Engineering Coding Challenge
 
 This exercise consists of developing a simple tool to compute the continuity of work for the workers on the platform.
 
@@ -9,20 +9,23 @@ In `worker_activity.csv` (please use the file provided in this repository), you 
 
 ```
 Worker, Employer, Role, Date
-1435, 234, 86,  2020-01-01 17:00:00
-1435, 234, 86,  2020-01-04 12:30:00
-1435, 234, 86,  2020-01-08 07:00:00
-135,  45,  696, 2020-01-25 18:00:00
-135,  45,  95,  2020-01-27 18:00:00
-135,  45,  95,  2020-01-29 22:15:00
-456,  78,  576, 2020-02-02 05:00:00
-456,  78,  576, 2020-11-29 14:30:00
+1435, 234, 86,  2022-01-01 17:00:00
+1435, 234, 86,  2022-01-04 12:30:00
+1435, 234, 86,  2022-01-08 07:00:00
+135,  45,  696, 2022-01-25 18:00:00
+135,  45,  95,  2022-01-27 18:00:00
+135,  45,  95,  2022-01-29 22:15:00
+456,  78,  576, 2022-02-02 05:00:00
+456,  78,  576, 2022-11-29 14:30:00
 ```
 
 
 ## Continuity of Work
 
-We want to generate a report describing the continuity of work for each user *as of 2020-12-01*. 
+We want to generate a report describing the continuity of work for each user *as of 2021-12-01*. This date is important when considering the first requirement
+(no activity for 6 days), as this should be generated as if we were running it on 1st Dec 2021.
+
+
 We increment continuity for each day worked, and the counter is reset when one of the rules below applies:
 
 * A worker had no activity for more than 6 days.
@@ -42,16 +45,17 @@ We expect a `results.csv` file following this format, ordered by `Continuity` (d
 The field `Continuity` is expressed in days.
 
 ```
-Worker, Continuity
-1435, 3
-135,  2
-456,  1
+Worker,Continuity
+1435,3
+135,2
+456,1
 ```
 
 
 ## Bonus Points
 
-We don't expect your solution to use sophisticated paradigms or frameworks. However, you can spend as much time you want to demonstrate your skills. You can, for example, implement your application in a stream-oriented fashion, or document how you would implement this in addition to your batch-oriented implementation.
+We don't expect your solution to use sophisticated paradigms or frameworks. However, you can spend as much time you want to demonstrate your skills. 
+You could, for example, implement some tests to ensure your output is correct. 
 
 
 ## Open questions
@@ -59,13 +63,12 @@ We don't expect your solution to use sophisticated paradigms or frameworks. Howe
 As part of your submission, please answer the following questions in a `readme.txt` file.
 
 1. What is the complexity of your algorithm?
-2. If you were to review someone else's code, what would you pay attention to?
-3. We provided a CSV file for conveniency, but in a production environment, what format or database would you recommend instead for this use-case (and why)?
-4. Is there anything else you would implement differently for a large-scale application in production?
+2. We provided a CSV file for convenience, but in a production environment, what format or database would you recommend instead for this use-case (and why)?
+3. Is there anything else you would implement differently for a large-scale application in production?
 
 
 ## Submission
 
 Please write your application in either Python, Java, Scala or Kotlin, with a runnable shell script named `run-app.sh` to launch your application.
-Please put your results in `result.csv` and submit all the files in a tarball named as follows: `syft-dataeng-<firstname>-<lastname>.tar.gz`.
-It's recommended to spend approximately 1 hour on this challenge. However, you are free to elaborate as much as you want to show us your ability to deliver great software!
+Please put your results in `result.csv` and submit all the files in a zip file named as follows: `indeedflex-dataeng-<firstname>-<lastname>.zip`.
+It's recommended to spend approximately 1 to 2 hours on this challenge. However, you are free to elaborate as much as you want to show us your ability to deliver great software!
