@@ -23,7 +23,7 @@ Worker, Employer, Role, Date
 ## Continuity of Work
 
 We want to generate a report describing the continuity of work for each user *as of 2021-12-01*. This date is important when considering the first requirement
-(no activity for 6 days), as this should be generated as if we were running the report on 1st Dec 2021.
+(no activity for 6 days), as this should be generated as if we we're running the report on 1st Dec 2021.
 
 
 We increment continuity for each day worked, and the counter is reset when one of the rules below applies:
